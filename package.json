@@ -1,0 +1,54 @@
+{
+  "name": "balladeer",
+  "version": "0.0.1",
+  "description": "Build design systems with React.",
+  "keywords": [
+    "design system",
+    "component library"
+  ],
+  "homepage": "https://github.com/fabien-h/homer",
+  "repository": "https://github.com/fabien-h/homer",
+  "bugs": {
+    "url": "https://github.com/fabien-h/homer",
+    "email": "fabien.huet@gmail.com"
+  },
+  "author": "fabien-h <fabien.huet@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "tsc",
+    "eslint": "eslint .",
+    "prettier": "prettier .",
+    "format": "npm run prettier -- --write",
+    "commit": "git-cz"
+  },
+  "dependencies": {
+    "commander": "^11.0.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
+    "@types/node": "^20.5.0",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "typescript": "^5.1.6"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,yml,yaml,css,scss,ts,tsx,md}": [
+      "prettier --write"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
